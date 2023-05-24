@@ -6,8 +6,6 @@ for Terraform.
 AKA, the things that can't be learned by banging the keyboard for
 2 hours.
 
-[![Hi](https://github.com/jpedro/levelup-terraform/actions/workflows/hi.yaml/badge.svg)](https://github.com/jpedro/levelup-terraform/actions/workflows/hi.yaml)
-
 
 ## Agenda
 
