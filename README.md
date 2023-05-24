@@ -11,7 +11,7 @@ AKA, the things that can't be learned by banging the keyboard for
 
 - [Why and what](docs/but-why.md)
 - [Concepts](docs/concepts.md)
-- [Workflow](docs/workflow.md)
+- [Workflows](docs/workflows.md)
 - [State](docs/state.md)
 
 
