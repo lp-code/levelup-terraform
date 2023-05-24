@@ -1,5 +1,4 @@
-name: Hi
-run-name: There's no badge for GH pages :/
+name: There's no badge for GH pages :/
 
 on:
   push:
