@@ -8,7 +8,7 @@ resources were created with it.
 
 The golden rule is:
 
-![Do not the cat](../.github/assets/images/donot.jpg)
+![Do not the cat](https://raw.githubusercontent.com/jpedro/levelup-terraform/master/.github/assets/images/donot.jpg)
 
 **DO NOT EDIT THE STATE MANUALLY.**
 
