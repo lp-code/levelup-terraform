@@ -48,10 +48,10 @@ Examples:
 
 Terraform beats AWS' CloudFormation at its own game by having:
 
-- more coverage of AWS resource than CFN itself
-- support for multi-region and multi-account deployments
-- doing things that in AWS requires custom lambda code (for example,
-  accepting a Transit Gateway attachment)
+- More coverage of AWS resource than CFN itself
+- Support for multi-region and multi-account deployments
+- Doing things that in AWS requires custom lambda code (for example,
+  accepting a Transit Gateway attachments)
 
 
 ### GCP
