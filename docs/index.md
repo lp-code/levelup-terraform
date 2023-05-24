@@ -11,10 +11,10 @@ AKA, the things that can't be learned by banging the keyboard for
 
 ## Agenda
 
-- 5 mins: [What and whys](docs/but-why.md)
-- 10 mins: [Concepts](docs/concepts.md)
-- 15 mins: [Workflows](docs/workflows.md)
-- 15 mins: [State](docs/state.md)
+- 5 mins: [What and whys](but-why.md)
+- 10 mins: [Concepts](concepts.md)
+- 15 mins: [Workflows](workflows.md)
+- 15 mins: [State](state.md)
 
 
 ## Sources of information:
