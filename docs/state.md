@@ -21,7 +21,7 @@ things in there. When you are sure do it on the original file.
 
 > **Note**
 >
-> Make sure the state files are versioned so you can detraumatised it.
+> Make sure the state files are versioned so you can detraumatised them.
 
 
 ## What
@@ -39,7 +39,7 @@ changed (applied). If resource A was changed, but resource B failed,
 next time you try to `apply` onlyresource B will be changed.
 
 
-## How does it look
+## But how does it look
 
 
 ## Reconciliation
