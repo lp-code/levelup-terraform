@@ -18,7 +18,7 @@ Other benefits of Iac are:
 
 ## Why
 
-![But why](../.github/assets/images/why.jpg)
+![But why](https://raw.githubusercontent.com/jpedro/levelup-terraform/master/.github/assets/images/why.jpg)
 
 Terraform was created in 2014 because Hashicorp realised the power of
 CloudFormation and they wanted that but not for AWS only.
