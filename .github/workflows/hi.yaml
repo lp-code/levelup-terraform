@@ -1,7 +1,9 @@
 name: Hi
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+    - master
 
 jobs:
   hello:
