@@ -7,7 +7,7 @@ AKA, the things that can't be learned by banging the keyboard for
 2 hours.
 
 
-## Parts
+## Agenda
 
 - 5 mins: [Why and what](docs/but-why.md)
 - 10 mins: [Concepts](docs/concepts.md)
