@@ -19,7 +19,7 @@ AKA, the things that can't be learned by banging the keyboard for
 
 - [Nordcloud slack channel](https://app.slack.com/client/T02MZBG9C/C3W6CHP4K)
 - [Some internal articles](https://backstage.nordcloud.io/docs/default/component/terraform-practice)
-- 🎤 🎶 If you like pina coladas 🍹 and [design by committee decisions](https://app.slack.com/client/T02MZBG9C/C056SLBSSE5)
+- 🎤 🎶 If you like pina coladas 🍹 and [design by committee](https://app.slack.com/client/T02MZBG9C/C056SLBSSE5)
 - And as always, [The Best Resource](https://www.youtube.com/results?search_query=terraform+tips+and+tricks)
 
 
