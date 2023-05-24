@@ -9,10 +9,10 @@ AKA, the things that can't be learned by banging the keyboard for
 
 ## Parts
 
-- [Why and what](docs/but-why.md)
-- [Concepts](docs/concepts.md)
-- [Workflows](docs/workflows.md)
-- [State](docs/state.md)
+- 5 mins: [Why and what](docs/but-why.md)
+- 10 mins: [Concepts](docs/concepts.md)
+- 15 mins: [Workflows](docs/workflows.md)
+- 15 mins: [State](docs/state.md)
 
 
 ## Sources of information:
