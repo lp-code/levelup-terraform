@@ -1,6 +1,6 @@
 # LevelUp — Terraform
 
-Introduction of basic concepts, resources, operations/commands/workflows
+Introduction of concepts, resources, operations/commands/workflows
 for Terraform.
 
 AKA, the things that can't be learned by banging the keyboard for
