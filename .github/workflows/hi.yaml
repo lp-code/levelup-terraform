@@ -1,0 +1,10 @@
+name: Hi
+
+jobs:
+  name: Oh hello
+  runs-on: ubuntu@latest
+
+  steps:
+  - name: Be polite
+    run: |
+      echo "Hello. It's $(date)."
