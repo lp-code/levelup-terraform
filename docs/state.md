@@ -12,9 +12,7 @@ The golden rule is:
 
 **DO NOT EDIT THE STATE MANUALLY.**
 
-Like a beautiful person, you can look but you cannot touch.
-
-Even consentful cli commands that manipulate the state outside writing
+Even cli commands that manipulate the state outside writing
 TF files should be handled carefully. If you need to test things out,
 copy the state file to another file, use that as storage and test
 things in there. When you are sure do it on the original file.
