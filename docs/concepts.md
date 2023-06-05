@@ -9,11 +9,11 @@ should create, update and delete.
 The JSON format is also accepted but it's less human-friendly to write.
 
 HCL is more flexible, supports more types, internal function calls like
-`value = lookup(map, key [, default])` and local `block`s where data can
-be manipulated before sent off to fed resources.
+`value = lookup(map, key [, default])` and `local` blocks where data can
+be manipulated before being used in resource definitions.
 
-Terraform only cares about **directories**. It reads all `.tf` files in
-your current directory and the declarative configuration of the
+Terraform amalgamates all `.tf` files in
+a directory and the configuration of the
 resources inside all `.tf` files is considered the **desired state**.
 
 
@@ -27,7 +27,7 @@ each of them has a
 [schema](https://github.com/hashicorp/terraform-provider-aws/blob/main/internal/service/ec2/ec2_instance.go#L61).
 That schema controls what fields are supported and can be used to
 control what type of values are allowed/valid and how changes should be
-handled. That is, if changing field `Name` requires a
+handled. For example, if changing field called `name` requires a
 [recreation](https://github.com/hashicorp/terraform-provider-aws/blob/main/internal/service/ec2/ec2_instance.go#LL63C5-L63C24)
 (destroy + create) or just an update (for example, as in a tag).
 
@@ -37,10 +37,11 @@ handled. That is, if changing field `Name` requires a
 Resources are things you want to **manage**. Data sources are things you
 want to **load**.
 
-Data sources are used to load into the provider internal structures
-resources that already exist. For example if you know the name of a VPC,
-you can load its fields into a `aws_vpc` and from there you can use its
-`id` or any other fields (below we also use `cidr_block`).
+Data sources are used to make existing resources' properties available
+in a configuration. For example if you need the name of a VPC that
+already exists in your Terraform configuration,
+you can load its fields into a `aws_vpc`, and from there you can use its
+`id` or any other fields (below we also use `cidr_block`) like this:
 
 ```hcl
 data "aws_vpc" "workshop" {
@@ -78,6 +79,7 @@ module "local_module" {
   name = "World"
 }
 
+# An output from the root module will be shown in Terraform's output stream.
 output "result" {
   value = module.local_module.greeting
 }
