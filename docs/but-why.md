@@ -61,5 +61,11 @@ Terraform official modules.
 
 ### Azure
 
-Azure favour its Bicep, which
+For Azure, Microsoft has created its own IaC solution, Bicep, which
 [looks a lot like TF](https://learn.microsoft.com/en-us/training/modules/introduction-to-infrastructure-as-code-using-bicep/4-what-bicep).
+However, they aim to give you good support whatever your favourite IaC tool is.
+For example, in 2022, Microsoft released
+[Microsoft Azure Export for Terraform](https://github.com/Azure/aztfexport),
+a tool to bring your existing Azure resources under the management of Terraform.
+There is also support for combining TF with ARM templates or Bicep, or direct
+Azure API access, for example to create resource types that are in preview.
