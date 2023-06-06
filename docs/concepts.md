@@ -129,3 +129,57 @@ lower("HELLO") => hello
 length(["a", "b"]) => 2
 toset(["c", "b", "b"]) => ["c", "b"]
 ```
+
+
+## Variables
+
+Variables in Terraform help to generalize configurations so that certain values
+can be set to values specific for an instance (of a module) or deployment (e.g.
+over dev/test/prod environments).
+
+Variables have:
+
+- name,
+- type (optional),
+- default (optional).
+
+Example:
+
+```hcl
+variable "environment_name" {
+  type    = string
+  default = "dev"
+}
+```
+
+To reference the value of the variable in a Terraform file within the same
+module write `var.environment_name` (note the difference between `variable`
+in the declaration and `var.` when reading the value).
+
+Variable values are typically set in one or more of the following ways:
+
+- From environment variables: To set the value of the above variable, define
+  the environment variable `TF_VAR_environment_name` in the shell from which
+  you call Terraform. (This only works for strings, not lists or maps.)
+- From a `.tfvars` file: Assign the value to `environment_name` in a file
+  with the extension `.tfvars`, e.g. `terraform.dev.tfvars`. This file can
+  then be passed in when running Terraform as in
+  `terraform -var-file terraform.dev.tfvars plan`.
+- On the command line: When calling Terraform, set the variable values on
+  the command line, e.g. `terraform -var 'environment_name="dev"' plan`.
+
+If the same variable is set in more than one of these three ways, then the
+last present of the three ways in the above order wins.
+
+
+## Locals
+
+A typical pattern is to define composed values as locals in one place in a
+module. For example:
+
+```hcl
+locals {
+  project_name = "foo"
+  vm_name      = "${local.project_name}-${var.environment_name}"  # interpolation
+}
+```
