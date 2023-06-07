@@ -112,6 +112,20 @@ Simple:
 - string: `"hello"`
 
 Collections:
-- `list`
-- `map`
-- `object`
+- `list` list of the same datatype
+- `map` key-value pair of the same datatype
+- `object` key-value pair of different datatype
+- `tuple` list of different datatype
+- `set` unordered list with no duplicated elements of the same type
+
+Inbuilt functions
+
+Terraform offers a list of useful helper functions.However it is not possible to write user defined functions.
+```
+max(5, 12, 9) => 12
+ceil(5.1) => 6
+parseint("100", 10) => 100
+lower("HELLO") => hello
+length(["a", "b"]) => 2
+toset(["c", "b", "b"]) => ["c", "b"]
+```

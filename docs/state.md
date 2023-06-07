@@ -93,3 +93,58 @@ show                Show a resource in the state
 
 The `list` and `show` subcommands are mere read operations to inspect the state,
 all the other commands should be used with great caution!
+
+
+## Advanced state manipulation 
+
+### Import existing resources
+
+Since not every deployment is going to be a greenfield deployment and there is a big chance that projects might have existing resources Terraform offers the `import` command to bring those resources into the state file. 
+Note that using this command will only update the state and will not generate any configurations for the existing resources. This means that you have to write configurations that matches the resources you are going to import. 
+
+```
+terraform import [options] ADDRESS ID
+```
+The `Address` must be Terraform resource address like `aws_instance.foo` or `module.foo.aws_instance.bar` while the `ID` represents the unique resource ID which dependent on the resource type.
+
+For instance if you have an existing EC2 instance with the name `web_server` you need to write configurations to match the instance and all its settings. 
+
+```
+resource "aws_instance" "web_server" {
+  ami           = "ami-09fd16644beea3565"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "web_server"
+  }
+}
+```
+
+Running `terraform plan` now will show that Terraform will try to create the new EC2 instance but we can tell Terraform to not to do so by importing the resource like this:
+
+```
+terraform import 'aws_instance.web_server' i-abcd1234
+```
+
+
+### Renaming existing resources
+
+Sometimes you might need to change resource name in the Terraform configurations and by simply doing so Terraform will plan to destroy and recreate the resource in order to update the state file. You can update the name in the configuration and use the `state mv` command to update the state file and avoid the recreation process. 
+
+```
+terraform state mv [options] SOURCE DESTINATION
+terraform state mv 'aws_instance.web_server' 'aws_instance.db'
+```
+
+### Remove resource management from Terraform    
+Let's assume that you have a database instance provisioned by Terraform and you want to tell Terraform to forget about it without destroying it, then you can use the `state rm command` to achieve that
+
+```
+terraform state rm [options] ADDRESS
+terraform state rm aws_db_instance.foo
+```
+
+### Refresh the state
+
+It is best practice to update resources only through configurations and not applying any changes manually. However, if you changed the name of an instance from the AWS management console Terraform will notice the resource name has been changed and it will plan to revert the change to match the configuration. If you need to keep the new name you only need to update the configuration to match the new name and run ` apply -refresh-only`. Using `plan,apply` command in the normal mode refresh the state by default so this can also be used to achieve the same result. 
+NB: Even though the `plan` command refresh the state the state file is updated only by running once you apply the changes
